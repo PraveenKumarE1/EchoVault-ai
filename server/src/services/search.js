@@ -1,0 +1,1 @@
+export function rankMemories(memories,query){const terms=query.toLowerCase().split(/\s+/).filter(Boolean);return memories.map(m=>{const text=(m.title+" "+m.content+" "+m.tags.join(" ")).toLowerCase();const score=terms.reduce((n,t)=>n+(text.includes(t)?1:0),0);return{...m,score}}).filter(m=>m.score>0).sort((a,b)=>b.score-a.score)}
