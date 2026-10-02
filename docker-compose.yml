@@ -1,0 +1,21 @@
+services:
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - echovault-data:/data/db
+  server:
+    image: node:22
+    working_dir: /app
+    volumes:
+      - ./server:/app
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "5000:5000"
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/echovault
+    depends_on:
+      - mongodb
+volumes:
+  echovault-data:
