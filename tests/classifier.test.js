@@ -1,0 +1,1 @@
+import{classifyMemory}from"../server/src/services/classifier.js";const result=classifyMemory("Java course notes and exam preparation");if(result.category!=="Learning")throw new Error("classifier test failed");console.log("classifier test passed");
