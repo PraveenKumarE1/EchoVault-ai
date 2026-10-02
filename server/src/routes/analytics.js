@@ -1,0 +1,1 @@
+import{Router}from"express";const router=Router();router.get("/overview",(req,res)=>res.json({memories:42,connections:128,areas:12,insights:9,topTopics:["AI","Java","Projects","Career","Smart City"]}));export{router as analyticsRoutes};
