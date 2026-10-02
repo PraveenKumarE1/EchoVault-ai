@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: nexus-code-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MODEL_BASE_URL
+        sync: false
+      - key: MODEL_API_KEY
+        sync: false
+      - key: MODEL_NAME
+        value: gpt-4o-mini
